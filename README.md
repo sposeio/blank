@@ -1,2 +1,2 @@
-# blank
-The blank repository for a Spose user.
+# Spose
+> Created for Spose.io for some quick sharing goodness.
