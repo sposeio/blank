@@ -1,3 +1,5 @@
 {% extends "layout.html" %}
 
-<img src="{{image}}">
+ {% block content %}
+  <img id="image-viewer" src="{{image}}">
+{% endblock %}
