@@ -59,7 +59,7 @@
       })
     }
 
-    $.getJSON("links.json", function(data) { 
+    $.getJSON("{{LINKS_PATH}}", function(data) { 
       var clip = data[sha]
 
       if(!clip) {
