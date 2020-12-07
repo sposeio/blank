@@ -59,22 +59,25 @@
       })
     }
 
-    $.getJSON("{{LINKS_PATH}}", function(data) { 
-      var clip = data[sha]
+    function renderLink() {
+      $.getJSON("{{LINKS_PATH}}", function(data) { 
+        var clip = data[sha]
 
-      if(!clip) {
-        return
-      }
+        if(!clip) {return}
 
-      $('#clip-name').text(sha)
-      $('#download-link').attr("href", data['download'])
+        $('#clip-name').text(sha)
+        $('#download-link').attr("href", data['download'])
 
-      if(clip.type == 'image') {
-        renderImage(clip.url)
-      } else {
-        renderText(clip.url)
-      }
-    })
+        if(clip.type == 'image') {
+          renderImage(clip.url)
+        } else {
+          renderText(clip.url)
+        }
+      })
+      .fail(function() {
+        renderLink()
+      })
+    }
   </script>
 </body>
 </html>
